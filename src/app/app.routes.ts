@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import {MyCounterComponent} from './my-counter/my-counter.component';
-import { HeroComponent } from './hero/hero.component';
+import { DemoReactiveFormComponent } from './demo-reactive-form/demo-reactive-form.component';
 export const routes: Routes = [
-    { path: '', component: MyCounterComponent },
-  { path: 'hero', component: HeroComponent }
+  
+  { path: 'reactiveform', component: DemoReactiveFormComponent },
+  { path: 'counter', component: MyCounterComponent },
 ];
