@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { CommonModule } from '@angular/common';
-import {increment, decrement,reset} from '../storage/counter.actions';
+import {increment, decrement,reset} from '../storage/counter/counter.actions';
 @Component({
   selector: 'app-my-counter',
   imports: [CommonModule],
