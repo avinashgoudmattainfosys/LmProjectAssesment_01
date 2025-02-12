@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component,inject,OnInit } from '@angular/core';
+import { Component,inject,OnInit, signal } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, FormArray } from '@angular/forms';
 import {FormBuilder} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
 import { Store, select } from '@ngrx/store';
-
 import { addEmployee, loadEmployees } from '../storage/employee/employee.actions';
 import { Employee } from '../services/employee.model';
 import { Observable } from 'rxjs';
+import { DatagridComponent } from '../datagrid/datagrid.component';
 
 @Component({
   selector: 'app-demo-reactive-form',
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,DatagridComponent],
   templateUrl: './demo-reactive-form.component.html',
   styleUrl: './demo-reactive-form.component.css'
 })
