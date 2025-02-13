@@ -1,5 +1,5 @@
 import {State, createReducer, on} from '@ngrx/store'
-import { Employee } from '../../services/employee.model'
+import { Employee } from '../../Models/employee.model'
 import { addEmployee, loadEmployeesSuccess } from './employee.actions';
 
 export const initialState: Employee[] = [];

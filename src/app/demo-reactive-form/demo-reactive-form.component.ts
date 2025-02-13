@@ -5,8 +5,8 @@ import {FormBuilder} from '@angular/forms';
 import {Validators} from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
 import { Store, select } from '@ngrx/store';
-import { addEmployee, loadEmployees } from '../storage/employee/employee.actions';
-import { Employee } from '../services/employee.model';
+import { addEmployee } from '../storage/employee/employee.actions';
+import { Employee } from '../Models/employee.model';
 import { Observable } from 'rxjs';
 import { DatagridComponent } from '../datagrid/datagrid.component';
 
@@ -24,8 +24,8 @@ export class DemoReactiveFormComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.employees$ = this.store.select('employees');
-    this.store.dispatch(loadEmployees());
+    // this.employees$ = this.store.select('employees');
+    // this.store.dispatch(loadEmployees());
   }
  
  

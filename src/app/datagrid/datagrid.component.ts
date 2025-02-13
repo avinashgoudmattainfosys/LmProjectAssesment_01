@@ -1,9 +1,10 @@
 import { Component,OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Employee } from '../services/employee.model';
+import { Employee, EmployeesResponse } from '../Models/employee.model';
 import { Store } from '@ngrx/store';
-import { loadEmployees } from '../storage/employee/employee.actions';
 import { CommonModule } from '@angular/common';
+import { EmployeeService } from '../services/employee.service';
+import { loadEmployees } from '../storage/employee/empoyeeResponse.actions';
 
 @Component({
   selector: 'app-datagrid',
@@ -12,14 +13,26 @@ import { CommonModule } from '@angular/common';
   styleUrl: './datagrid.component.css'
 })
 export class DatagridComponent implements OnInit {
-  employees$: Observable<Employee[]> | undefined;
-  constructor(private store: Store<{employees: Employee[]}>){
+  employees$: Observable<EmployeesResponse> | undefined;
+  cop: EmployeesResponse | undefined;
+ 
+  constructor(private store: Store<{employees: Employee[]}>
+    ,private employeeService: EmployeeService
+    ,private store2: Store<{ employeeResponse: EmployeesResponse }>
+  ){
 
   }
-  ngOnInit() {
-    this.employees$ = this.store.select('employees');
-    this.store.dispatch(loadEmployees());
+  ngOnInit(): void {
+    this.store2.dispatch(loadEmployees());
+    this.employees$ = this.store2.select(state => state.employeeResponse);
   }
+  // ngOnInit() {
+  //   // this.employees$ = this.store.select('employees');
+  //   this.store.dispatch(loadEmployees());
+  //   this.store.dispatch({ type: '[Employee Grid] Load Employees' });
+  //   // this.employees$  = this.employeeService.getAllEmployees();
+  //   this.employees$ = this.store2.select(state => state.employeeResponse);
+  // }
  
 }
  
