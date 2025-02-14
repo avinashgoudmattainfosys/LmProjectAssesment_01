@@ -2,7 +2,7 @@ import { Actions, createEffect, ofType } from "@ngrx/effects"
 import { EMPTY, catchError, exhaustMap, map } from "rxjs"
 import { EmployeeService } from "../../services/employee.service"
 import { Injectable, inject } from "@angular/core";
-import { loadEmployeeRespoonseSuccess, loadEmployees } from "./empoyeeResponse.actions";
+import { loadEmployeesResponseSuccess, loadEmployees } from "../employeeResponse/empoyeeResponse.actions";
 
 @Injectable()
 export class EmployeeEffects {
@@ -20,7 +20,7 @@ export class EmployeeEffects {
                 return this.employeeService.getAllEmployees().pipe(
                     map(employeeResponse => {
                         console.log('Employees loaded', employeeResponse);
-                        return loadEmployeeRespoonseSuccess({ employeeResponse });
+                        return loadEmployeesResponseSuccess({ employeeResponse });
                     }),
                     catchError((error) => {
                         console.error('Error loading employees', error);

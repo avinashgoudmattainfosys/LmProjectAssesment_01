@@ -14,7 +14,8 @@ import { DatagridComponent } from '../datagrid/datagrid.component';
   selector: 'app-demo-reactive-form',
   imports: [ReactiveFormsModule,CommonModule,DatagridComponent],
   templateUrl: './demo-reactive-form.component.html',
-  styleUrl: './demo-reactive-form.component.css'
+  styleUrl: './demo-reactive-form.component.css',
+  standalone: true,
 })
 export class DemoReactiveFormComponent implements OnInit{
   employees$: Observable<Employee[]> | undefined;

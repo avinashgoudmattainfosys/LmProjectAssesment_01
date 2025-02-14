@@ -4,7 +4,8 @@ import { Component, OnInit, signal } from '@angular/core';
   selector: 'app-concept-tutorial',
   imports: [],
   templateUrl: './concept-tutorial.component.html',
-  styleUrl: './concept-tutorial.component.css'
+  styleUrl: './concept-tutorial.component.css',
+  standalone: true
 })
 export class ConceptTutorialComponent implements OnInit {
   ngOnInit(): void {
