@@ -1,0 +1,44 @@
+<!-- <div *ngIf="isEdit">
+  <app-demo-reactive-form></app-demo-reactive-form>
+</div> -->
+
+<br> <button class="btn-primary" (click)="addEmployee()" >+ Add New Employee</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br>
+<div  class="table-responsive">
+<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>Alias Names</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody  *ngIf="employees$ | async as empResp">
+    
+        <tr *ngFor="let employee of empResp.employees">
+          
+          <td>{{ employee.firstName }}</td>
+          <td>{{ employee.lastName }}</td>
+          <td>{{ employee.address.streetAddress1 }}
+            ,{{ employee.address.streetAddress2 }}
+            , {{ employee.address.city }}
+            , {{ employee.address.state }}
+            , {{ employee.address.zip }}</td>
+          <td>{{ employee.aliases }}</td>
+          <td>
+
+            <button class="btn-primary" (click)="detailsEmployee()" >Details</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn-primary" (click)="editEmployee(employee)" >Edit</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn-danger" (click)="deleteEmployee()" >Delete</button>
+
+            <!-- <a routerLink="/reactiveform" class="btn btn-info" href="/reactiveform">Details</a> &nbsp;&nbsp;&nbsp;
+            <a routerLink="/reactiveform" class="btn btn-primary" href="/reactiveform/{{employee.id}}">Edit</a> &nbsp;&nbsp;&nbsp;
+            <a routerLink="/reactiveform" class="btn btn-danger" href="/reactiveform">Delete</a>  -->
+ 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

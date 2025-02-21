@@ -16,7 +16,7 @@ export const appConfig: ApplicationConfig = {
               , provideStore(
                 { 
                   count: counterReducer, 
-                  employees: employeeReducer ,
+                  employee: employeeReducer ,
                   employeeResponse: employeeResponseReducer 
                 })
                 ,provideHttpClient()

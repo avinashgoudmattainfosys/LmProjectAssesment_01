@@ -1,13 +1,24 @@
 import {State, createReducer, on} from '@ngrx/store'
 import { Employee } from '../../Models/employee.model'
-import { addEmployee, loadEmployeesSuccess } from './employee.actions';
+import { selectedEmployee } from './employee.actions';
 
-export const initialState: Employee[] = [];
-
- export const employeeReducer = createReducer(
+export type EmployeeState = Employee;
+export const initialState: Employee = {
+    id: 0,
+    firstName: '',
+    lastName: '',
+    gender: '',
+    aliases: [],
+    address: {
+        streetAddress1: '',
+        streetAddress2: '',
+        state: '',
+        city: '',
+        zip: '',
+        country: ''
+    }
+};
+export const employeeReducer = createReducer(
     initialState,
-    on(addEmployee, (state, {employee}) => [...state,employee]),
-    on(loadEmployeesSuccess, (state, {employees}) => [...employees])
-)
-
- 
+    on(selectedEmployee, (state, { employee }) => ({ ...state, ...employee }))
+);
