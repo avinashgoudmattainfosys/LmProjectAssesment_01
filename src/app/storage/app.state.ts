@@ -14,6 +14,7 @@ export interface AppState {
 //   employees: employeeReducer,
 //   employeeResponse: employeeResponseReducer
 // };
+
 export const employeeResponse = (state: AppState) => state.employeeResponse;
 export const employee = (state: AppState) => state.employee;
 
@@ -23,9 +24,11 @@ export const employeeListResponse = createSelector(
       return employeeResponse;
   }
 );
+
 export const selectedEmployee= createSelector(
   employee,
   (employee: EmployeeState) => {
       return employee;
   }
 );
+

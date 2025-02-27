@@ -5,7 +5,7 @@ import { ConceptTutorialComponent } from './concept-tutorial/concept-tutorial.co
 import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
 export const routes: Routes = [
   { path: '', component: ConceptTutorialComponent },
-  { path: 'reactiveform', component: DemoReactiveFormComponent },
+  { path: 'reactiveform/:mode', component: DemoReactiveFormComponent },
   { path: 'counter', component: MyCounterComponent },
   { path: 'concepts', component: ConceptTutorialComponent },
   { path: 'employeeinfo', component: EmployeeGridComponent }

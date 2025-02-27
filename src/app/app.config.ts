@@ -6,9 +6,9 @@ import { provideStore } from '@ngrx/store';
 import { employeeReducer } from './storage/employee/employee.reducer';
 import { provideHttpClient } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
-import { EmployeeEffects } from './storage/employee/employee.effects';
 import { EmployeeService } from './services/employee.service';
 import { employeeResponseReducer } from './storage/employeeResponse/employeeResponse.reducer';
+import { EmployeeResponseEffects } from './storage/employeeResponse/employeeresponse.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true })
@@ -17,10 +17,10 @@ export const appConfig: ApplicationConfig = {
                 { 
                   count: counterReducer, 
                   employee: employeeReducer ,
-                  employeeResponse: employeeResponseReducer 
+                  employeeResponse: employeeResponseReducer ,
                 })
                 ,provideHttpClient()
-                ,provideEffects(EmployeeEffects)
+                ,provideEffects(EmployeeResponseEffects)
                 ,EmployeeService
             ]
 };

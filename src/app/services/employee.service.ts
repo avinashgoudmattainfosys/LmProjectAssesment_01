@@ -14,9 +14,12 @@ export class EmployeeService {
 
   constructor(private http: HttpClient ,private store: Store) { }
 
-  saveEmployee(employee: Employee){
-    this.updateStorage(employee);
+  saveEmployee(employee: Employee): Observable<any>{
+     return this.http.post("http://localhost:5089/Employee", employee);
   }
+  deleteEmployee(id:number): Observable<any>{  
+    return this.http.delete(`http://localhost:5089/Employee/${id}`);
+ }
   updateStorage(employee: Employee) {
     // this.store.dispatch(addEmployee({employee}));
     // TODO: Dispatch an increment action

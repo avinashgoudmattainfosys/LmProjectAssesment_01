@@ -29,9 +29,9 @@
           <td>{{ employee.aliases }}</td>
           <td>
 
-            <button class="btn-primary" (click)="detailsEmployee()" >Details</button>&nbsp;&nbsp;&nbsp;
+            <button class="btn-primary" (click)="detailsEmployee(employee)" >Details</button>&nbsp;&nbsp;&nbsp;
             <button class="btn-primary" (click)="editEmployee(employee)" >Edit</button>&nbsp;&nbsp;&nbsp;
-            <button class="btn-danger" (click)="deleteEmployee()" >Delete</button>
+            <button class="btn-danger" (click)="deleteEmployee(employee.id)" >Delete</button>
 
             <!-- <a routerLink="/reactiveform" class="btn btn-info" href="/reactiveform">Details</a> &nbsp;&nbsp;&nbsp;
             <a routerLink="/reactiveform" class="btn btn-primary" href="/reactiveform/{{employee.id}}">Edit</a> &nbsp;&nbsp;&nbsp;
