@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tour-of-heroes": {
+    "lm-project-assesment": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tour-of-heroes",
+            "outputPath": "dist/lm-project-assesment",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tour-of-heroes:build:production"
+              "buildTarget": "lm-project-assesment:build:production"
             },
             "development": {
-              "buildTarget": "tour-of-heroes:build:development"
+              "buildTarget": "lm-project-assesment:build:development"
             }
           },
           "defaultConfiguration": "development"
