@@ -20,10 +20,7 @@ export class EmployeeService {
   deleteEmployee(id:number): Observable<any>{  
     return this.http.delete(`http://localhost:5089/Employee/${id}`);
  }
-  updateStorage(employee: Employee) {
-    // this.store.dispatch(addEmployee({employee}));
-    // TODO: Dispatch an increment action
-  }
+
   getAllEmployees():Observable<EmployeesResponse> {
      return this.http.get<EmployeesResponse>("http://localhost:5089/Employee");
   }

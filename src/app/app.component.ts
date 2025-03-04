@@ -8,7 +8,6 @@ import { RouterOutlet } from '@angular/router';
   standalone: true
 })
 export class AppComponent {
-  title = 'tour-of-heroes';
 }
 
 

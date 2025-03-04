@@ -22,7 +22,6 @@ export class EmployeeGridComponent implements OnInit {
 
   constructor(private store: Store<AppState>
     ,private router: Router
-    ,private employeeService: EmployeeService
   ) {
 
   }
