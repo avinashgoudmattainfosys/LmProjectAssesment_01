@@ -9,12 +9,6 @@ export interface AppState {
     employeeResponse: EmployeesResponseState;
   }
 
-// export const reducers: ActionReducerMap<AppState> = {
-//   counter: counterReducer,
-//   employees: employeeReducer,
-//   employeeResponse: employeeResponseReducer
-// };
-
 export const employeeResponse = (state: AppState) => state.employeeResponse;
 export const employee = (state: AppState) => state.employee;
 
